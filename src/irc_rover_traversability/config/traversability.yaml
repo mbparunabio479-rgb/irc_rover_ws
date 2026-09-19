@@ -1,0 +1,16 @@
+traversability:
+  ros__parameters:
+
+    input_topic: "/terrain/features"
+    output_topic: "/terrain/traversability"
+
+    # TEMPORARY SOFTWARE DEFAULTS.
+    # These MUST be calibrated after the Mid-360 is mounted
+    # on the actual rover.
+
+    max_slope_deg: 25.0
+    max_roughness_m: 0.10
+    min_confidence: 0.20
+
+    slope_weight: 0.5
+    roughness_weight: 0.5

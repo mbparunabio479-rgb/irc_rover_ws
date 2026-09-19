@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<library path="terrain_costmap_layer">
+  <class
+    type="irc_rover_terrain_costmap::TerrainCostmapLayer"
+    base_class_type="nav2_costmap_2d::Layer">
+    <description>
+      Terrain traversability costmap layer for the IRC rover.
+      Converts terrain_class from the terrain GridMap into Nav2 costs.
+    </description>
+  </class>
+</library>

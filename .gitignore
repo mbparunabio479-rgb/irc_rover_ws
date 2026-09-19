@@ -1,0 +1,48 @@
+# ROS 2 / Colcon generated files
+build/
+install/
+log/
+
+# Colcon cache
+.colcon/
+.cache/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# C/C++ build artifacts
+*.o
+*.so
+*.a
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary/editor files
+*.swp
+*.swo
+*~
+*.tmp
+
+# ROS bags / recorded data
+*.bag
+*.db3
+*.mcap
+
+# Large point-cloud / sensor data
+*.pcd
+*.ply
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.7z
+.git_backup/

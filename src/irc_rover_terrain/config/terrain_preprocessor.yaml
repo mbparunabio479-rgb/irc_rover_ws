@@ -1,0 +1,33 @@
+terrain_preprocessor:
+  ros__parameters:
+
+    input_topic: "/cloud_registered"
+
+    elevation_cloud_topic: "/terrain/elevation_cloud"
+
+    elevation_topic: "/terrain/elevation"
+
+    confidence_topic: "/terrain/confidence"
+
+    # FAST-LIO local cloud filtering
+    voxel_size: 0.05
+
+    # Terrain grid resolution
+    grid_resolution: 0.10
+
+    # Local terrain processing region
+    roi_x_min: -10.0
+    roi_x_max: 10.0
+
+    roi_y_min: -10.0
+    roi_y_max: 10.0
+
+    roi_z_min: -3.0
+    roi_z_max: 3.0
+
+    # Low percentile prevents a single low outlier
+    # from becoming the terrain height.
+    elevation_percentile: 20.0
+
+    # Minimum points required to create a cell.
+    min_points_per_cell: 2

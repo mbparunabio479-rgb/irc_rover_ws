@@ -1,0 +1,26 @@
+test_costmap:
+  ros__parameters:
+    global_frame: camera_init
+    robot_base_frame: body
+
+    update_frequency: 5.0
+    publish_frequency: 2.0
+
+    width: 20
+    height: 20
+    resolution: 0.10
+    origin_x: -10.0
+    origin_y: -10.0
+
+    rolling_window: true
+    track_unknown_space: true
+
+    plugins: ["terrain_layer"]
+
+    terrain_layer:
+      plugin: "irc_rover_terrain_costmap::TerrainCostmapLayer"
+      enabled: true
+      input_topic: "/terrain/traversability"
+      unknown_cost: 0.0
+      difficult_cost: 150.0
+      non_traversable_cost: 254.0

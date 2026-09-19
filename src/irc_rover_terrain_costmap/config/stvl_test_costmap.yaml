@@ -1,0 +1,60 @@
+stvl_test_costmap:
+  ros__parameters:
+    global_frame: camera_init
+    robot_base_frame: body
+
+    update_frequency: 5.0
+    publish_frequency: 2.0
+
+    width: 20
+    height: 20
+    resolution: 0.10
+    origin_x: -10.0
+    origin_y: -10.0
+
+    rolling_window: true
+    track_unknown_space: true
+
+    plugins: ["stvl_layer"]
+
+    stvl_layer:
+      plugin: "spatio_temporal_voxel_layer/SpatioTemporalVoxelLayer"
+      enabled: true
+
+      voxel_decay: 5.0
+      decay_model: 0
+      voxel_size: 0.10
+
+      track_unknown_space: true
+      mark_threshold: 0
+      update_footprint_enabled: true
+      combination_method: 1
+
+      origin_z: -1.0
+      transform_tolerance: 0.2
+
+      mapping_mode: false
+      publish_voxel_map: false
+
+      observation_sources: lidar_mark
+
+      lidar_mark:
+        data_type: PointCloud2
+        topic: /cloud_registered
+
+        marking: true
+        clearing: false
+
+        obstacle_range: 10.0
+
+        min_obstacle_height: 0.30
+        max_obstacle_height: 3.0
+
+        expected_update_rate: 0.0
+        observation_persistence: 0.0
+
+        inf_is_valid: false
+
+        filter: "voxel"
+        voxel_min_points: 0
+        clear_after_reading: true
